@@ -90,7 +90,9 @@ public class Syringe : MonoBehaviour
     void Fire()
     {
         var bulletGo = solutionPoolManager.Pool.Get();
-
-        bulletGo.transform.position = firePos.position;
+        bulletGo.transform.position = firePos.transform.position;
+        Vector2 direction = new Vector2(Mathf.Cos(nowAngle * Mathf.Deg2Rad), Mathf.Sin(nowAngle * Mathf.Deg2Rad));
+        bulletGo.transform.right = direction;
+        bulletGo.GetComponent<Rigidbody2D>().AddForce(direction * 25f,ForceMode2D.Impulse);
     }
 }

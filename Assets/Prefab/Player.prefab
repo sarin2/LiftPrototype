@@ -135,6 +135,8 @@ MonoBehaviour:
   nowAngle: 0
   rotationSpeed: 75
   syringeUI: {fileID: 0}
+  solutionPoolManager: {fileID: 0}
+  firePos: {fileID: 0}
 --- !u!1 &4455707048141093949
 GameObject:
   m_ObjectHideFlags: 0

@@ -23,10 +23,6 @@ public class Solution : MonoBehaviour
         {
             Pool.Release(gameObject);
         }
-        else
-        {
-            rigid.AddForce(new Vector2(20, 20f));
-        }
 
     }
 }

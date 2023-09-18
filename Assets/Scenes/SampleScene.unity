@@ -508,6 +508,11 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!4 &1016703124 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7303074614688706987, guid: 724936c64b84b3a458b534db58f5dfc7, type: 3}
+  m_PrefabInstance: {fileID: 4654949009133040220}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1163509047 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7388101834549578041, guid: 724936c64b84b3a458b534db58f5dfc7, type: 3}
@@ -1124,7 +1129,7 @@ GameObject:
   - component: {fileID: 1747217643}
   m_Layer: 0
   m_Name: ObjectPoolManager
-  m_TagString: Untagged
+  m_TagString: SolutionPoolManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1546,6 +1551,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7388101834549578041, guid: 724936c64b84b3a458b534db58f5dfc7, type: 3}
+      propertyPath: firePos
+      value: 
+      objectReference: {fileID: 1016703124}
     - target: {fileID: 7388101834549578041, guid: 724936c64b84b3a458b534db58f5dfc7, type: 3}
       propertyPath: syringeUI
       value: 
