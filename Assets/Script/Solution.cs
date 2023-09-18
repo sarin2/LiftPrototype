@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class Solution : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public IObjectPool<GameObject> Pool { get; set; }
+    public float speed = 5f;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (transform.position.y > 5)
+        {
+            Pool.Release(gameObject);
+        }
+
     }
 }

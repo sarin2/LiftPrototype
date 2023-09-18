@@ -73,6 +73,15 @@ public class Syringe : MonoBehaviour
 
             transform.rotation = Quaternion.Euler(0, 0, nowAngle);
         }
+        else
+        {
+
+        }
+
+    }
+
+    void Fire()
+    {
 
     }
 }
