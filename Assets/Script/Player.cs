@@ -53,9 +53,6 @@ public class Player : MonoBehaviour
         if(Input.GetButton("Jump"))
             TryJump();
 
-        if (Input.GetKeyDown(KeyCode.Q))
-            syringe.gameObject.SetActive(!syringe.gameObject.activeSelf);
-
         if (Input.GetKeyDown(KeyCode.E))
             syringe.TryClearFill();
 
