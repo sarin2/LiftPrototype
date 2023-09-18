@@ -12,7 +12,7 @@ public class ObjectPoolManager : MonoBehaviour
 
     [SerializeField]
     public GameObject solutionPrefab;
-    IObjectPool<GameObject> Pool { get; set; }
+    public ObjectPool<GameObject> Pool { get; set; }
     private void Awake()
     {
         Init();

@@ -34,11 +34,18 @@ public class Syringe : MonoBehaviour
 
     [SerializeField]
     private SyringeUI syringeUI;
+    [SerializeField]
+    private ObjectPoolManager solutionPoolManager;
+
+    [SerializeField]
+    private Transform firePos;
 
     void Start()
     {
         syringeRotateState = ESyringeRotateState.SyringeUp;
         syringeType = EElementType.None;
+        solutionPoolManager = GameObject.FindGameObjectWithTag("SolutionPoolManager").GetComponent<ObjectPoolManager>();
+        
     }
 
     public void TryClearFill()
@@ -75,13 +82,15 @@ public class Syringe : MonoBehaviour
         }
         else
         {
-
+            Fire();
         }
 
     }
 
     void Fire()
     {
+        var bulletGo = solutionPoolManager.Pool.Get();
 
+        bulletGo.transform.position = firePos.position;
     }
 }
