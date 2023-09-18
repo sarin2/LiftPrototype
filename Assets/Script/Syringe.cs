@@ -40,11 +40,14 @@ public class Syringe : MonoBehaviour
     [SerializeField]
     private Transform firePos;
 
+    Player owner;
+
     void Start()
     {
         syringeRotateState = ESyringeRotateState.SyringeUp;
         syringeType = EElementType.None;
         solutionPoolManager = GameObject.FindGameObjectWithTag("SolutionPoolManager").GetComponent<ObjectPoolManager>();
+        owner = GetComponentInParent<Player>();
         
     }
 
@@ -92,6 +95,8 @@ public class Syringe : MonoBehaviour
         var bulletGo = solutionPoolManager.Pool.Get();
         bulletGo.transform.position = firePos.transform.position;
         Vector2 direction = new Vector2(Mathf.Cos(nowAngle * Mathf.Deg2Rad), Mathf.Sin(nowAngle * Mathf.Deg2Rad));
+        if (owner.isFacingLeft)
+            direction *= -1;
         bulletGo.transform.right = direction;
         bulletGo.GetComponent<Rigidbody2D>().AddForce(direction * 25f,ForceMode2D.Impulse);
     }

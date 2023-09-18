@@ -20,9 +20,11 @@ public class Player : MonoBehaviour
     [SerializeField]
     private EPlayerState playerState;
 
-    private float horizontal;
+    public float horizontal;
     [SerializeField]
     private Syringe syringe;
+
+    public bool isFacingLeft;
 
     private void OnValidate()
     {
@@ -35,6 +37,7 @@ public class Player : MonoBehaviour
         Application.targetFrameRate = 180;
         playerState = EPlayerState.Idle;
         rigid.freezeRotation = true;
+        isFacingLeft = false;
     }
 
     // Update is called once per frame
@@ -64,6 +67,12 @@ public class Player : MonoBehaviour
     {
         if (horizontal != 0f)
         {
+
+            if (horizontal < 0 && !isFacingLeft)
+                isFacingLeft = true;
+            else if (horizontal > 0 && isFacingLeft)
+                isFacingLeft = false;
+
             if(playerState != EPlayerState.Jumping)
                 playerState = EPlayerState.Running;
             transform.localScale = new Vector3(horizontal, 1, 1);
