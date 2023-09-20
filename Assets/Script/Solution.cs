@@ -9,7 +9,8 @@ public class Solution : MonoBehaviour
     public float speed = 5f;
     public Rigidbody2D rigid;
     private float lifeTime = 2.0f;
-    void Start()
+
+    private void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
     }
@@ -23,9 +24,16 @@ public class Solution : MonoBehaviour
     {
         if (lifeTime <= 0)
         {
+            rigid.gravityScale = 0f;
             Pool.Release(gameObject);
         }
         lifeTime -= Time.deltaTime;
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.collider.name.Contains("Wall"))
+        rigid.gravityScale = 2.0f;
     }
 }

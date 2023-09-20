@@ -19,10 +19,10 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private EPlayerState playerState;
-
-    public float horizontal;
     [SerializeField]
     private Syringe syringe;
+
+    public float horizontal;
 
     public bool isFacingLeft;
     public bool attackStance;

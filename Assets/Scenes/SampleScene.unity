@@ -1507,6 +1507,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1162845175002579650, guid: 724936c64b84b3a458b534db58f5dfc7, type: 3}
+      propertyPath: m_TagString
+      value: Syringe
+      objectReference: {fileID: 0}
     - target: {fileID: 2518478321659184160, guid: 724936c64b84b3a458b534db58f5dfc7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.57
@@ -1571,6 +1575,10 @@ PrefabInstance:
       propertyPath: syringeUI
       value: 
       objectReference: {fileID: 1338152375}
+    - target: {fileID: 7388101834549578041, guid: 724936c64b84b3a458b534db58f5dfc7, type: 3}
+      propertyPath: rotationSpeed
+      value: 135
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1587,6 +1595,10 @@ PrefabInstance:
     - target: {fileID: 609075813248626280, guid: fda574289bfdce043a352313d00f8744, type: 3}
       propertyPath: m_Name
       value: WaterFlask
+      objectReference: {fileID: 0}
+    - target: {fileID: 609075813248626280, guid: fda574289bfdce043a352313d00f8744, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 812014889723975962, guid: fda574289bfdce043a352313d00f8744, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1652,6 +1664,10 @@ PrefabInstance:
     - target: {fileID: 3034591204987125203, guid: 331320b3e4f85aa439358234372fae5a, type: 3}
       propertyPath: m_Name
       value: FireFlask
+      objectReference: {fileID: 0}
+    - target: {fileID: 3034591204987125203, guid: 331320b3e4f85aa439358234372fae5a, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 3602064964265757313, guid: 331320b3e4f85aa439358234372fae5a, type: 3}
       propertyPath: elementType
