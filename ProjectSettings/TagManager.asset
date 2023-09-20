@@ -7,6 +7,7 @@ TagManager:
   - Static
   - SyringeUI
   - SolutionPoolManager
+  - Syringe
   layers:
   - Default
   - TransparentFX

@@ -36,6 +36,8 @@ public class Syringe : MonoBehaviour
     private SyringeUI syringeUI;
     [SerializeField]
     private ObjectPoolManager solutionPoolManager;
+    [SerializeField]
+    private float syringeGage = 0f;
 
     [SerializeField]
     private Transform firePos;
@@ -92,12 +94,41 @@ public class Syringe : MonoBehaviour
 
     void Fire()
     {
-        var bulletGo = solutionPoolManager.Pool.Get();
-        bulletGo.transform.position = firePos.transform.position;
-        Vector2 direction = new Vector2(Mathf.Cos(nowAngle * Mathf.Deg2Rad), Mathf.Sin(nowAngle * Mathf.Deg2Rad));
-        if (owner.isFacingLeft)
-            direction *= -1;
-        bulletGo.transform.right = direction;
-        bulletGo.GetComponent<Rigidbody2D>().AddForce(direction * 25f,ForceMode2D.Impulse);
+        if(syringeGage>0)
+        {
+            var bulletGo = solutionPoolManager.Pool.Get();
+            bulletGo.transform.position = firePos.transform.position;
+            Vector2 direction = new Vector2(Mathf.Cos(nowAngle * Mathf.Deg2Rad), Mathf.Sin(nowAngle * Mathf.Deg2Rad));
+            if (owner.isFacingLeft)
+                direction *= -1;
+            bulletGo.transform.right = direction;
+            bulletGo.GetComponent<Rigidbody2D>().AddForce(direction * 25f, ForceMode2D.Impulse);
+
+            syringeGage -= 10f * Time.deltaTime;
+            syringeUI.FillUI(syringeGage * 0.01f);
+        }
+        else
+        {
+            return;
+        }
+
+    }
+
+    public void FillGage(ElementFlask flask)
+    {
+        if (syringeType == EElementType.None)
+        {
+            syringeType = flask.elementType;
+        }
+        else if (syringeType == flask.elementType)
+        {
+            syringeGage += 10f * Time.deltaTime;
+        }
+        syringeUI.FillUI(syringeGage * 0.01f);
+    }
+
+    public void ClearGauge()
+    {
+        syringeGage = 0f;
     }
 }

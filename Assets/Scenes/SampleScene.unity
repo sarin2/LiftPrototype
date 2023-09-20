@@ -1551,6 +1551,14 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4712918489077063661, guid: 724936c64b84b3a458b534db58f5dfc7, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712918489077063661, guid: 724936c64b84b3a458b534db58f5dfc7, type: 3}
+      propertyPath: m_GravityScale
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5272194836227453473, guid: 724936c64b84b3a458b534db58f5dfc7, type: 3}
       propertyPath: m_Name
       value: Player

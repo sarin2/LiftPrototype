@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     private Syringe syringe;
 
     public bool isFacingLeft;
+    public bool attackStance;
 
     private void OnValidate()
     {
@@ -38,6 +39,7 @@ public class Player : MonoBehaviour
         playerState = EPlayerState.Idle;
         rigid.freezeRotation = true;
         isFacingLeft = false;
+        attackStance = false;
     }
 
     // Update is called once per frame
@@ -59,7 +61,10 @@ public class Player : MonoBehaviour
 
 
         if (Input.GetKeyDown(KeyCode.E))
+        {
             syringe.TryClearFill();
+            syringe.ClearGauge();
+        }
 
     }
 

@@ -20,25 +20,19 @@ public class SyringeUI : MonoBehaviour
         syringeFill = fillObject.GetComponent<Image>();
     }
 
-    public void FillUI(ElementFlask flask)
+    public void FillUI(float Gage)
     {
-        if (syringe.syringeType == EElementType.None)
+        switch (syringe.syringeType)
         {
-            syringe.syringeType = flask.elementType;
-            switch (flask.elementType)
-            {
-                case EElementType.Water:
-                    syringeFill.color = Color.blue;
-                    break;
-                case EElementType.Fire:
-                    syringeFill.color = Color.red;
-                    break;
-            }
+            case EElementType.Water:
+                syringeFill.color = Color.blue;
+                break;
+            case EElementType.Fire:
+                syringeFill.color = Color.red;
+                break;
         }
-        else if (syringe.syringeType == flask.elementType)
-        {
-            syringeSlider.value += 0.2f * Time.deltaTime;
-        }
+
+        syringeSlider.value = Gage;
     }
 
     public void ClearFill()

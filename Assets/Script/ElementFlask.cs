@@ -12,7 +12,7 @@ public class ElementFlask : MonoBehaviour
     public EElementType elementType;
     void Start()
     {
-        rechargeSyringe.AddListener(()=>GameObject.FindGameObjectWithTag("SyringeUI").GetComponent<SyringeUI>().FillUI(this));
+        rechargeSyringe.AddListener(()=>GameObject.FindGameObjectWithTag("Syringe").GetComponent<Syringe>().FillGage(this));
     }
 
     // Update is called once per frame
