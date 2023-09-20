@@ -30,7 +30,7 @@ public class Syringe : MonoBehaviour
     [SerializeField]
     private float nowAngle = 0f;
     [SerializeField]
-    private float rotationSpeed = 135f;
+    private float rotationSpeed = 75f;
 
     [SerializeField]
     private SyringeUI syringeUI;
@@ -102,14 +102,13 @@ public class Syringe : MonoBehaviour
             if (owner.isFacingLeft)
                 direction *= -1;
             bulletGo.transform.right = direction;
-            bulletGo.GetComponent<Rigidbody2D>().AddForce(direction * 35f, ForceMode2D.Impulse);
+            bulletGo.GetComponent<Rigidbody2D>().AddForce(direction * 25f, ForceMode2D.Impulse);
 
             syringeGage -= 10f * Time.deltaTime;
             syringeUI.FillUI(syringeGage * 0.01f);
         }
         else
         {
-            ClearGauge();
             return;
         }
 
@@ -123,7 +122,7 @@ public class Syringe : MonoBehaviour
         }
         else if (syringeType == flask.elementType)
         {
-            syringeGage += 22f * Time.deltaTime;
+            syringeGage += 10f * Time.deltaTime;
         }
         syringeUI.FillUI(syringeGage * 0.01f);
     }
