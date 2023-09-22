@@ -9,6 +9,7 @@ TagManager:
   - SolutionPoolManager
   - Syringe
   - Walls
+  - VirtualCamera
   layers:
   - Default
   - TransparentFX
