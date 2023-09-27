@@ -7,7 +7,7 @@ public class Parallax : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public float length, startX, startY;
+    public float startX, startY;
 
     public GameObject cam;
 
