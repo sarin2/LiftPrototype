@@ -17,15 +17,13 @@ public class CameraControll : MonoBehaviour
 
     private void Awake()
     {
+        mainCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
         virtualCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CinemachineVirtualCamera>();
         offset = GetComponent<CinemachineCameraOffset>();
-
-        Debug.Log(offset.m_Offset.y);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 }
