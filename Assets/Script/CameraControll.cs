@@ -43,7 +43,7 @@ public class CameraControll : MonoBehaviour
         for(int i = 0; i < distantView.Count; i++)
         {
             distantView[i].GetComponent<SpriteRenderer>().size = imageSize;
-            distantView[i].transform.position = new Vector3(mainCamera.transform.position.x, mainCamera.transform.position.y, 0);
+            distantView[i].transform.position = new Vector3(mainCamera.transform.position.x, mainCamera.transform.position.y, -5f);
         }
 
             }
